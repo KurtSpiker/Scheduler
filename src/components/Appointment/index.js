@@ -1,6 +1,9 @@
 import React from "react";
 
 import "./styles.scss";
+import Empty from "./Empty";
+import Header from "./Header";
+import Show from "./Show";
 
 
 export default function Appointment(props) {
@@ -11,6 +14,9 @@ export default function Appointment(props) {
     return "no Appointments"
   }
   return(
-    <article className="appointment">{appointmentText}</article>
+    <article className="appointment">{appointmentText}
+      <Header time={props.time}></Header>
+      {props.interview ? <Show student={props.interview.student} interviewer={props.interview.interviewer} /> : <Empty />}
+    </article>
   )
 }
