@@ -6,7 +6,7 @@ import classNames from "classnames";
 export default function InterviewListItem(props) {
   const InterviewClass = classNames ("interviewers__item", {
     "interviewers__item--selected": props.selected
-  })
+  });
   const selectedName = (selected) => {
     if(!selected) {
       return "";
