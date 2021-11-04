@@ -5,7 +5,6 @@ import Empty from "./Empty";
 import Header from "./Header";
 import Show from "./Show";
 import Form from "./Form";
-import { getInterview } from "helpers/selectors";
 import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
