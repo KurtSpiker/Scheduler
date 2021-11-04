@@ -56,10 +56,12 @@ export default function useApplicationData() {
       ...state.appointments[id],
       interview: null
     };
+    
     const appointments = {
       ...state.appointments,
       [id]: appointment
     };
+    
     return axios.delete(`/api/appointments/${id}`, {interview})
       .then((res) => {
         const days = availiabilityUpdate(state, true, id)
@@ -72,7 +74,6 @@ export default function useApplicationData() {
   }
   function availiabilityUpdate(state, cancelInterview, id) {
     const { day, days, appointments } = state;
-
     const currentDay = days.find((desiredDay) => desiredDay.name === day);
     let spots = 0;
 
