@@ -29,6 +29,7 @@ export default function useApplicationData() {
     })
   }, [])
 
+  //Hooks for canceling, and booking an interview. Containg the correct calls and state updates
 
   function bookInterview(id, interview) {
     const appointment = {
@@ -50,7 +51,7 @@ export default function useApplicationData() {
         });
       })
   }
-
+  
   function cancelInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -72,6 +73,7 @@ export default function useApplicationData() {
         });
       })
   }
+  //A hook used for determining, and updating the amount of spots for a given day
   function availiabilityUpdate(state, cancelInterview, id) {
     const { day, days, appointments } = state;
     const currentDay = days.find((desiredDay) => desiredDay.name === day);

@@ -1,3 +1,5 @@
+//Helper functions used within application.js
+
 export function getAppointmentsForDay(state, day) {
   const appointmentsForDay = []
   

@@ -2,7 +2,7 @@ import React from "react";
 import "components/DayListItem.scss";
 import classNames from "classnames";
 
-
+//A spot function used to determine the current amount of space in a day
 const formatSpots = (spots) => {
   if(!spots) {
     return `no spots remaining`;

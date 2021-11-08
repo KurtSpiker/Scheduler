@@ -9,9 +9,9 @@ import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
 
-
 export default function Appointment(props) {
 
+  //Mode and transition declaration
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -33,6 +33,7 @@ export default function Appointment(props) {
     }
   }
 
+  // Save and delete functions complete with promises for transitioning
   function save (name, interviewer) {
     const interview = {
       student: name,
@@ -47,7 +48,7 @@ export default function Appointment(props) {
   }
 
   function deleteInterview() {
-    transition(DELETING)
+    transition(DELETING, true)
     props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
       .catch((err) => {
@@ -55,6 +56,8 @@ export default function Appointment(props) {
       })
   }
 
+  // The main jsx used for interacting with appointments -
+  // which will feed props to the other components.
   return(
     <article className="appointment">
       <Header time={props.time}></Header>
